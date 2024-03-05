@@ -127,7 +127,7 @@
   font-weight: 900;
   font-style: italic;
 }
-.logo{
+/* .logo{
   transition: all 0.6s cubic-bezier(0.42, 0, 1, 1);
 }
 .logo:hover {
@@ -140,5 +140,4 @@
 .logo2:hover {
   color:black;
   transition: all 0.6s ease-in;
-
-}
+} */
