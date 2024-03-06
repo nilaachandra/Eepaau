@@ -141,3 +141,14 @@
   color:black;
   transition: all 0.6s ease-in;
 } */
+
+@media screen and (max-width: 600px) {
+  .mobilenav{
+    height: 0;
+    transition: all 0.2s ease-out;
+  }
+  .mobilenav.openMenu{
+    height: 140px;
+    transition: all 0.2s ease-in;
+  }
+}
