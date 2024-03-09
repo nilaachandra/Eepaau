@@ -59,6 +59,23 @@ export class AuthService {
     return null;
   }
 
+  //Method for reader/guest accounts
+  async readers() {
+    try {
+      const readerID = ID.unique();
+      const reader = await this.account.create(
+        readerID,
+        "reader@eepaau.com",
+        "",
+        "Reader"
+      );
+      await this.account.updateStatus(readerID, "guest");
+      return reader;
+    } catch (error) {
+      throw error;
+    }
+  }
+
   // Method for logging out the current user
   async logout() {
     try {
