@@ -7,8 +7,7 @@ export class DBService {
   bucket;
 
   constructor() {
-    this.client
-      .setEndpoint(config.appwriteURL)
+    this.client.setEndpoint(config.appwriteURL)
       .setProject(config.appwriteProjectID);
     this.databases = new Databases(this.client);
     this.bucket = new Storage(this.client);
@@ -161,3 +160,6 @@ export class DBService {
     ).href
   }
 }
+
+const appwriteServie = new DBService()
+export default appwriteServie;
