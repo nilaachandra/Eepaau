@@ -8,6 +8,11 @@ import store from "./store/store.js";
 import Login from "./components/Authentication/Login.jsx"
 import Signup from "./components/Authentication/Signup.jsx"
 import Protected from "./components/protected/Protected.jsx";
+import Home from "./Home.jsx";
+import AddNews from "./components/Newseditor/AddNews.jsx"
+import EditNews from "./components/Newseditor/EditNews.jsx"
+import News from "./components/Newscontainer/News.jsx"
+
 
 const router = createBrowserRouter([
   {
@@ -16,7 +21,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home />
+        element: <Home/>
       },
       {
         path: '/login',
@@ -30,6 +35,24 @@ const router = createBrowserRouter([
                   <Signup/>
                 </Protected>),
       },
+      {
+        path: '/add-news',
+        element: (<Protected authentication={true}>
+          <AddNews/>
+        </Protected>)
+      },
+      {
+        path: '/edit-news/:slug',
+        element: (<Protected authentication={true}>
+          <EditNews/>
+        </Protected>)
+      },
+      {
+        path: '/news/:slug',
+        element: (<Protected authentication={false}>
+          <News/>
+        </Protected>)
+      }
     ]
   }
 ]);
