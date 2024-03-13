@@ -31,12 +31,15 @@ const Topnav = () => {
         Want to contribute?{" "}
 
         {
-          navItems.map((item) => item.active ? (<span onClick={() => navigate(item.slug)}>{item.name}</span>) : null)
+          navItems.map((item, key) => item.active ? (<span key={key} onClick={() => navigate(item.slug)}>{item.name}</span>) : null)
         }
 
        {" "}
         as a Contributor!
       </p>
+      {
+        authStatus && (<span><Logout/></span>)
+      }
     </div>
   );
 };
