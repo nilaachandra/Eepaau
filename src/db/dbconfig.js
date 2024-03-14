@@ -161,5 +161,5 @@ export class DBService {
   }
 }
 
-const appwriteServie = new DBService()
-export default appwriteServie;
+const appwriteService = new DBService()
+export default appwriteService;

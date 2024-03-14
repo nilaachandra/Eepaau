@@ -1,5 +1,5 @@
 import config from "../configs/config.js";
-import { Client, Account } from "appwrite";
+import { Client, Account, ID } from "appwrite";
 
 // Define a class for handling authentication-related tasks
 export class AuthService {
@@ -21,14 +21,14 @@ export class AuthService {
   }
 
   // Method for creating a new user account
-  async createAccount({ email, password, userName }) {
+  async createAccount({ email, password, name }) {
     try {
       // Attempt to create a new account with provided credentials
       const authorAccount = await this.account.create(
         ID.unique(),
         email,
         password,
-        userName
+        name
       );
 
       // If account creation is successful, log in the new user
