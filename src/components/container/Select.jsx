@@ -1,4 +1,5 @@
 import React , {useId} from "react"
+import Button from "./Button"
 
 function Select({
     options,
@@ -30,11 +31,7 @@ function Select({
                     ))
                 }
             </select>
-            <Button
-                type="submit"
-                bgColor={post ? "bg-green-500": undefined}
-                className="w-full"
-                >{post ? "Update": "Submit"}</Button>
+            
         </div>
     )
 }

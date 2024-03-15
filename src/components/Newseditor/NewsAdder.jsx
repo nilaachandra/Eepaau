@@ -6,7 +6,7 @@ const NewsAdder = () => {
   return (
     <div className='py-6'>
         <Container>
-            <NewsAdder />
+            <AddNews />
         </Container>
 
     </div>

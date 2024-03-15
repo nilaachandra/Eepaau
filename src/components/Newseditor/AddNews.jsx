@@ -1,6 +1,7 @@
 import React, { useCallback } from "react";
 import { useForm } from "react-hook-form";
 import Input from "../container/Input";
+import Button from "../container/Button";
 import Select from "../container/Select";
 import RTE from "./RTE";
 import appwriteService from "../../db/dbconfig";
@@ -65,13 +66,13 @@ const AddNews = ({ post }) => {
   React.useEffect(() => {
     watch((value, { name }) => {
       if (name === "title") {
-        setValue("slug", slugTransform(value, title), { shouldValidate: true });
+        setValue("slug", slugTransform(value.title), { shouldValidate: true });
       }
     });
   }, [watch, slugTransform, setValue]);
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-wrap">
+    <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
       <div className="w-2/3 px-2">
         <Input
           label="Title"

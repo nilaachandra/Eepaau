@@ -137,10 +137,15 @@ export class DBService {
 
   async uploadFiles(file) {
     try {
-      return await this.bucket.createFile(config.appwriteBucketID, ID.unique());
+      return await this.bucket.createFile(config.appwriteBucketID, 
+        ID.unique()
+        ,file
+        );
+      
     } catch (error) {
       console.log("Appwrite Service :: uploadFiles() ::", error);
       return false;
+
     }
   }
 
@@ -153,7 +158,7 @@ export class DBService {
     }
   }
 
-  getfilePreview(fileId){
+  getFilePreview(fileId){
     return this.bucket.getFilePreview(
       config.appwriteBucketID,
       fileId

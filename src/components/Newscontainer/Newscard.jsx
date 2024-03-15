@@ -16,10 +16,10 @@ const Newscard = ({
     // Fetch file preview URL asynchronously
     const fetchFilePreview = async () => {
       try {
-        const url = await appwriteService.getfilePreview(newsImage1);
+        const url = await appwriteService.getFilePreview(newsImage1);
         setPreviewUrl(url);
       } catch (error) {
-        console.error("Error fetching file preview:", error);
+        console.log("Error fetching file preview:", error);
       }
     };
 
